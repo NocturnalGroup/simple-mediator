@@ -39,7 +39,7 @@ internal sealed class EventSender : IEventSender
 		{
 			await whenAllTask.ConfigureAwait(false);
 		}
-		catch (Exception _)
+		catch (Exception)
 		{
 			throw whenAllTask.Exception!;
 		}
