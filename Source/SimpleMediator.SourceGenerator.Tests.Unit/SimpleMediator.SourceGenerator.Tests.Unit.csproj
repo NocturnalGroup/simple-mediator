@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<!-- Project -->
+		<LangVersion>latest</LangVersion>
+		<TargetFrameworks>net9.0;net8.0</TargetFrameworks>
+		<RootNamespace>NocturnalGroup.SimpleMediator.SourceGenerator.Tests.Unit</RootNamespace>
+
+		<!-- Features -->
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+
+		<!-- Source Generator -->
+		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+
+		<!-- Build -->
+		<IsPackable>false</IsPackable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Using Include="Xunit"/>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.2" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.13.0" />
+		<PackageReference Include="NSubstitute" Version="5.3.0" />
+		<PackageReference Include="Shouldly" Version="4.3.0"/>
+		<PackageReference Include="xunit.v3" Version="1.1.0"/>
+		<PackageReference Include="xunit.runner.visualstudio" Version="3.0.2"/>
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SimpleMediator.Abstractions\SimpleMediator.Abstractions.csproj" />
+		<ProjectReference
+			Include="..\SimpleMediator.SourceGenerator\SimpleMediator.SourceGenerator.csproj"
+			ReferenceOutputAssembly="false"
+			OutputItemType="Analyzer"
+		/>
+	</ItemGroup>
+
+</Project>

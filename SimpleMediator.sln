@@ -1,0 +1,51 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mediator", "Mediator", "{A83F058B-4DAD-4A84-A360-ACEF7B36461F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleMediator.Abstractions", "Source\SimpleMediator.Abstractions\SimpleMediator.Abstractions.csproj", "{B4B74C6D-54AB-47A8-8302-7A9ADC4E5EA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleMediator.InMemory", "Source\SimpleMediator.InMemory\SimpleMediator.InMemory.csproj", "{AA515C04-885D-4DB3-AF7D-057964BFD2E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleMediator.InMemory.Tests.Unit", "Source\SimpleMediator.InMemory.Tests.Unit\SimpleMediator.InMemory.Tests.Unit.csproj", "{A09D121F-8BA5-4E20-BDBF-99CE367B350E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source Generator", "Source Generator", "{A4C42D00-8A9A-4592-A7BD-9FA6D60F2034}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleMediator.SourceGenerator", "Source\SimpleMediator.SourceGenerator\SimpleMediator.SourceGenerator.csproj", "{8615532A-9B89-4F95-A6D1-506AD336E436}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleMediator.SourceGenerator.Tests.Unit", "Source\SimpleMediator.SourceGenerator.Tests.Unit\SimpleMediator.SourceGenerator.Tests.Unit.csproj", "{D52DB94C-03D1-4AFE-91DF-7C923B255777}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B4B74C6D-54AB-47A8-8302-7A9ADC4E5EA2} = {A83F058B-4DAD-4A84-A360-ACEF7B36461F}
+		{AA515C04-885D-4DB3-AF7D-057964BFD2E4} = {A83F058B-4DAD-4A84-A360-ACEF7B36461F}
+		{A09D121F-8BA5-4E20-BDBF-99CE367B350E} = {A83F058B-4DAD-4A84-A360-ACEF7B36461F}
+		{8615532A-9B89-4F95-A6D1-506AD336E436} = {A4C42D00-8A9A-4592-A7BD-9FA6D60F2034}
+		{D52DB94C-03D1-4AFE-91DF-7C923B255777} = {A4C42D00-8A9A-4592-A7BD-9FA6D60F2034}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B4B74C6D-54AB-47A8-8302-7A9ADC4E5EA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4B74C6D-54AB-47A8-8302-7A9ADC4E5EA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4B74C6D-54AB-47A8-8302-7A9ADC4E5EA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4B74C6D-54AB-47A8-8302-7A9ADC4E5EA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA515C04-885D-4DB3-AF7D-057964BFD2E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA515C04-885D-4DB3-AF7D-057964BFD2E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA515C04-885D-4DB3-AF7D-057964BFD2E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA515C04-885D-4DB3-AF7D-057964BFD2E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A09D121F-8BA5-4E20-BDBF-99CE367B350E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A09D121F-8BA5-4E20-BDBF-99CE367B350E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A09D121F-8BA5-4E20-BDBF-99CE367B350E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A09D121F-8BA5-4E20-BDBF-99CE367B350E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8615532A-9B89-4F95-A6D1-506AD336E436}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8615532A-9B89-4F95-A6D1-506AD336E436}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8615532A-9B89-4F95-A6D1-506AD336E436}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8615532A-9B89-4F95-A6D1-506AD336E436}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D52DB94C-03D1-4AFE-91DF-7C923B255777}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D52DB94C-03D1-4AFE-91DF-7C923B255777}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D52DB94C-03D1-4AFE-91DF-7C923B255777}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D52DB94C-03D1-4AFE-91DF-7C923B255777}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

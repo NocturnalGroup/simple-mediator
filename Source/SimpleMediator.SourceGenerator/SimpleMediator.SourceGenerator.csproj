@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<!-- Project -->
+		<LangVersion>Latest</LangVersion>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<RootNamespace>NocturnalGroup.SimpleMediator.SourceGenerator</RootNamespace>
+
+		<!-- Features -->
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>true</ImplicitUsings>
+
+		<!-- Source Generator -->
+		<IncludeBuildOutput>false</IncludeBuildOutput>
+		<EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
+
+		<!-- NuGet -->
+		<PackageId>NocturnalGroup.SimpleMediator.SourceGenerator</PackageId>
+		<Authors>Nocturnal Group</Authors>
+		<Description>A dead simple mediator implementation</Description>
+		<PackageProjectUrl>https://github.com/NocturnalGroup/simple-mediator</PackageProjectUrl>
+		<PackageIcon>Logo.png</PackageIcon>
+		<PackageReadmeFile>readme.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/NocturnalGroup/simple-mediator</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageTags>mediator</PackageTags>
+		<PackageLicenseFile>license.txt</PackageLicenseFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\..\readme.md" Pack="true" PackagePath="" Visible="false"/>
+		<None Include="..\..\license.txt" Pack="true" PackagePath="" Visible="false"/>
+		<None Include="..\..\Assets\Logo.png" Pack="true" PackagePath="" Visible="false"/>
+		<None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false"/>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.11.0" PrivateAssets="all"/>
+		<PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.12.0" PrivateAssets="all"/>
+	</ItemGroup>
+
+</Project>

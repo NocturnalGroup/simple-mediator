@@ -1,0 +1,9 @@
+{
+	"$schema": "https://json.schemastore.org/launchsettings.json",
+	"profiles": {
+		"Test Generator": {
+			"commandName": "DebugRoslynComponent",
+			"targetProject": "../SimpleMediator.SourceGenerator.Tests.Unit/SimpleMediator.SourceGenerator.Tests.Unit.csproj"
+		}
+	}
+}
