@@ -1,0 +1,92 @@
+name: Validate Pull Request
+on:
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  message-formatting:
+    name: Check Commit Message Formatting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: latest
+
+      - name: Install commitlint
+        run: |
+          npm install -g @commitlint/cli @commitlint/config-conventional
+
+      - name: Run CommitLint
+        run: |
+          npx commitlint \
+          --config .config/.commitlint.json \
+          --from ${{ github.event.pull_request.base.sha }} \
+          --to ${{ github.event.pull_request.head.sha }} \
+          --verbose
+
+  editorconfig-formatting:
+    name: Check EditorConfig Compliance
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: latest
+
+      - name: Install EditorConfig Checker
+        run: |
+          npm install -g editorconfig-checker
+
+      - name: Run EditorConfig Checker
+        run: |
+          npx editorconfig-checker
+
+  csharp-formatting:
+    name: Check C# Code Formatting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.x.x
+            9.x.x
+
+      - name: Install CSharpier
+        run: |
+          dotnet tool restore
+
+      - name: Run CSharpier
+        run: |
+          dotnet csharpier --check .
+
+  csharp-tests:
+    name: Run C# Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.x.x
+            9.x.x
+
+      - name: Run Tests
+        run: |
+          dotnet test
