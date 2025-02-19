@@ -1,0 +1,49 @@
+name: Publish Project
+on:
+  release:
+    types: [released]
+permissions:
+  contents: read
+jobs:
+  csharp-tests:
+    name: Run C# Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.x.x
+            9.x.x
+
+      - name: Run Tests
+        run: |
+          dotnet test
+
+  csharp-publish:
+    name: Publish C# to NuGet
+    runs-on: ubuntu-latest
+    needs: [csharp-tests]
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.x.x
+            9.x.x
+
+      - name: Create Package
+        run: |
+          dotnet pack --configuration Release --output Packages -p:PackageVersion=${{ github.event.release.tag_name }} Source/SimpleMediator.Abstractions/SimpleMediator.Abstractions.csproj
+          dotnet pack --configuration Release --output Packages -p:PackageVersion=${{ github.event.release.tag_name }} Source/SimpleMediator.InMemory/SimpleMediator.InMemory.csproj
+          dotnet pack --configuration Release --output Packages -p:PackageVersion=${{ github.event.release.tag_name }} Source/SimpleMediator.SourceGenerator/SimpleMediator.SourceGenerator.csproj
+
+      - name: Publish Package
+        run: |
+          dotnet nuget push Packages/*.nupkg --skip-duplicate -k ${{ secrets.NUGET_KEY }} -s "https://api.nuget.org/v3/index.json"
